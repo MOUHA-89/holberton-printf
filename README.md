@@ -1,3 +1,4 @@
+![Design sans titre (1)](https://github.com/user-attachments/assets/6c49e29e-59f0-4c28-92c1-b876153258c0)
 Name of project: _printf
 
 Description: This repo contains all our code custom function called _printf() it's a fonction of language C from stdio.h and our function _printf() replicates the same process as the the C function printf(). This is done as a part our training for a software development program.
