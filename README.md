@@ -16,5 +16,7 @@ MAN PAGE Name : _printf (it's the same that the printf function in C it's a simp
 RETURN VALUES The _printf() function returns an integer representing the number of symbols printed not counting \0 for the string.
 
 Flowchart:
-![Design sans titre (1)](https://github.com/user-attachments/assets/b8dbfe3f-c404-4f07-a5f9-37c345bbe175)
+![Design sans titre](https://github.com/user-attachments/assets/cbdecdaf-cfe6-432f-92f8-619429688db6)
+
+
 
