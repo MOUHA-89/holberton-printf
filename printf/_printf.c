@@ -10,20 +10,20 @@ int _printf(const char *format, ...)
 {
 int count = 0;
 va_list args;
-const char *ptr;
+const char *p;
 va_start(args, format);
-for (ptr = format; *ptr != '\0'; ptr++)
+for (p = format; *p != '\0'; p++)
 {
-if (*ptr == '%' && (*(ptr + 1) == 'c' || *(ptr + 1) == 's' || *(ptr + 1) == '%'))
+if (*p == '%' && (*(p + 1) == 'c' || *(p + 1) == 's' || *(p + 1) == '%'))
 {
-ptr++;
-if (*ptr == 'c')
+p++;
+if (*p == 'c')
 {
 char c = (char)va_arg(args, int);
 write(1, &c, 1);
 count++;
 }
-else if (*ptr == 's')
+else if (*p == 's')
 {
 char *s = va_arg(args, char *);
 if (s == NULL)
@@ -35,7 +35,7 @@ s++;
 count++;
 }
 }
-else if (*ptr == '%')
+else if (*p == '%')
 {
 write(1, "%", 1);
 count++;
@@ -43,7 +43,7 @@ count++;
 }
 else
 {
-write(1, ptr, 1);
+write(1, p, 1);
 count++;
 }
 }
