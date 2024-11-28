@@ -4,6 +4,13 @@
 - A simple re-creation of the printf function
 .SH SYNOPSIS
 To use this function the #include "main.h" header is needed.
+.br
+#include <unistd.h>
+.br
+#include <stdarg.h>
+.br
+.br
+int _printf(const char *format, ...)
 .SH DESCRIPTION
 The _printf() function produces output according to a format which is described
 below. This function write its output to the stdout, the standard output stream.
