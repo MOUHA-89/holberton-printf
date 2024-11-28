@@ -16,4 +16,3 @@ RETURN VALUES The _printf() function returns an integer representing the number 
 
 Flowchart: Design sans titre (1)
 ![IMG_1759](https://github.com/user-attachments/assets/84adfefb-b188-4ea7-b528-a179aabd5db8)
-
