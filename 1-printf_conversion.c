@@ -1,45 +1,86 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
+#include <unistd.h>
 /**
- * _printf - a simplified version of printf.
- * @format: the format string.
- * print_int - a function that print an number.
- * Return: the number of characters printed.
+ * format_char - Print a character.
+ * @arg_list: List of arguments.
+ * Return: 1
  */
-void print_int(int num)
+int format_char(va_list arg_list)
 {
-if (num < 0)
-{
-putchar('-');
-num = -num;
+char c = va_arg(arg_list, int);
+return (write(1, &c, 1));
 }
-char str[20];
+
+/**
+ * format_string - Print a string.
+ * @arg_list: List of arguments.
+ *
+ */
+int format_string(va_list arg_list)
+{
+char *str = va_arg(arg_list, char *);
+int len = 0;
+
+if (!str)
+{
+str = "(null)";
+}
+
+while (str[len])
+{
+len++;
+}
+return (write(1, str, len));
+}
+
+/**
+ * format_percent - Print a percent sign.
+ * @arg_list: List of arguments bu not used.
+ * Return: 1
+ */
+int format_percent(va_list arg_list)
+{
+(void)arg_list;
+return (write(1, "%", 1));
+}
+
+/**
+ * format_int - Print an integer.
+ * @arg_list: List of arguments.
+ * Return: Number of interger printed.
+ */
+int format_int(va_list arg_list)
+{
+int num = va_arg(arg_list, int);
+int count = 0;
+char buffer[12];
 int i = 0;
+int is_negative = 0;
 
 if (num == 0)
 {
-putchar('0');
-return;
+write(1, "0", 1);
+return (1);
 }
+
+if (num < 0)
+{
+is_negative = 1;
+num = -num;
+}
+
 while (num > 0)
 {
-str[i++] = (num % 10) + '0';
-num /= 10;
+buffer[i++] = (num % 10) + '0';
+num = num / 10;
 }
-for (int j = i - 1; j >= 0; j--)
-{
-putchar(str[j]);
-}
-}
-int main(void)
-{
-print_int(-123);
-printf("\n");
-print_int(456);
-printf("\n");
-print_int(0);
-printf("\n");
-return (0);
+
+if (is_negative)
+buffer[i++] = '-';
+
+count = i;
+while (i > 0)
+write(1, &buffer[--i], 1);
+
+return (count);
 }
