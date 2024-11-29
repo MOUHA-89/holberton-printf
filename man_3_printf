@@ -28,6 +28,10 @@ To use _printf you have to use the following key characters preceeded by % symbo
 %i: To print integers of max and min size of an int type
 .RS 0
 %b: To print a number in binary form
+.SH EXAMPLE
+_printf("Bonjour, %s ! Tu as %d ans.\n", "monde", 25);
+.br
+Bonjour, monde ! Tu as 25 ans.
 .SH RETURN VALUES
 The _printf() function returns an integer representing the number of symbols
 printed not counting \\0 for the string.
