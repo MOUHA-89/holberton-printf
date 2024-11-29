@@ -1,6 +1,7 @@
 #include "main.h"
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdio.h>
 /**
  * format_char - Print a character.
  * @arg_list: List of arguments.
