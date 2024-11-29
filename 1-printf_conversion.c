@@ -15,7 +15,7 @@ return (write(1, &c, 1));
 /**
  * format_string - Print a string.
  * @arg_list: List of arguments.
- * Return: return _string.
+ * Return: 1
  */
 int format_string(va_list arg_list)
 {
