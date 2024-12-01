@@ -13,10 +13,10 @@ char c = va_arg(arg_list, int);
 return (write(1, &c, 1));
 }
 /**
- * format_string - Print a string.
+ * format_string - Formats a string for printf-style conversion.
  * @arg_list: List of arguments.
  * Return: return an integer.
- *
+ * Return: A formatted string, or NULL on faillure.
  */
 int format_string(va_list arg_list)
 {
